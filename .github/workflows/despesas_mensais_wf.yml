@@ -1,0 +1,36 @@
+name: Despesas Mensais
+
+on:
+  schedule:
+    # Cron: 0 0 1 * * → às 00:00 UTC do dia 1 de cada mês
+    - cron: "0 0 1 * *"
+  workflow_dispatch:          # permite correr manualmente
+
+jobs:
+  run-python:
+    runs-on: ubuntu-latest
+    steps:
+      # Clona o repositório
+      - uses: actions/checkout@v3
+
+      # Setup Python 3.13
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.13'
+
+      # Instala dependências
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # Executa o script despesas_mensais.py
+      - name: Run Despesas Mensais
+        run: python despesas_mensais.py
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+
+      # Executa o script despesas_mensais_activobank.py
+      - name: Run Despesas Mensais ActivoBank
+        run: python despesas_mensais_activobank.py
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}

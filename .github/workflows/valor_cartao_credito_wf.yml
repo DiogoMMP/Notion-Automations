@@ -1,0 +1,30 @@
+name: Valor Cartão Crédito
+
+on:
+  schedule:
+    # Cron: */5 * * * * → a cada 5 minutos
+    - cron: "*/5 * * * *"
+  workflow_dispatch:          # permite correr manualmente
+
+jobs:
+  run-python:
+    runs-on: ubuntu-latest
+    steps:
+      # Clona o repositório
+      - uses: actions/checkout@v3
+
+      # Setup Python 3.13
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.13'
+
+      # Instala dependências
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # Executa o script valor_cartao_credito.py
+      - name: Run Valor Cartão Crédito
+        run: python valor_cartao_credito.py
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
