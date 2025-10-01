@@ -3,9 +3,7 @@ from datetime import datetime, timezone
 import os
 
 # === CONFIGURAÇÃO DO NOTION ===
-#NOTION_TOKEN = os.environ["NOTION_TOKEN"]
-
-NOTION_TOKEN = "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"
+NOTION_TOKEN = os.environ["NOTION_TOKEN"]
 
 # === BASES DE DADOS ===
 DESPESAS_MENSAIS_BD = "273fdc291a72802d805cf87e978f92e1"

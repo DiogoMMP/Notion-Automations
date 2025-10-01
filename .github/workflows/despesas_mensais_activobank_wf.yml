@@ -1,4 +1,4 @@
-name: Despesas Mensais
+name: Despesas Mensais ActivoBank
 
 on:
   schedule:
@@ -23,8 +23,8 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      # Executa o script despesas_mensais.py
-      - name: Run Despesas Mensais
-        run: python despesas_mensais.py
+      # Executa o script despesas_mensais_activobank.py
+      - name: Run Despesas Mensais ActivoBank
+        run: python despesas_mensais_activobank.py
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
