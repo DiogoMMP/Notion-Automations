@@ -86,7 +86,7 @@ if pago is True:
         properties={
             P_NOME: {
                 "title": [
-                    {"text": {"content": "Pagamento do Cartão de Crédito"}}
+                    {"text": {"content": "Pagamento do Cartão de Crédito Santander"}}
                 ]
             },
             P_CATEGORIA: {

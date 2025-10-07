@@ -2,7 +2,7 @@ name: Cartão de Crédito Santander
 
 on:
   schedule:
-    - cron: "*/5 * 6-8 * *"  # a cada 5 minutos, dias 6, 7 e 8 do mês
+    - cron: "*/5 * 4-8 * *"  # a cada 5 minutos, dias 6, 7 e 8 do mês
   workflow_dispatch:          # permite correr manualmente
 
 jobs:
@@ -19,7 +19,12 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run script
-        run: python cartao_credito.py
+      - name: Run Cartão de Crédito Santander
+        run: python cartao_credito_santander.py
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+
+      - name: Run Cartão de Crédito Universo
+        run: python cartao_credito_universo.py
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}

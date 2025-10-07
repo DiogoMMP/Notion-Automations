@@ -23,8 +23,14 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      # Executa o script valor_cartao_credito.py
-      - name: Run Valor Cartão Crédito
-        run: python valor_cartao_credito.py
+      # Executa o script valor_cartao_credito_santander.py
+      - name: Run Valor Cartão Crédito Santander
+        run: python valor_cartao_credito_santander.py
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+
+      # Executa o script valor_cartao_credito_universo.py
+      - name: Run Valor Cartão Crédito Universo
+        run: python valor_cartao_credito_universo.py
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
