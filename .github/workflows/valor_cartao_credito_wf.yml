@@ -34,3 +34,10 @@ jobs:
         run: python valor_cartao_credito_universo.py
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+
+      # Executa o script valor_cartao_credito_oney.py
+      - name: Run Valor Cartão Crédito Oney
+        run: python valor_cartao_credito_oney.py
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+
