@@ -45,7 +45,7 @@ results = notion.databases.query(
                 {
                     "property": "Data",
                     "date": {
-                        "before": fim
+                        "on_or_before": fim
                     }
                 },
                 {
@@ -84,7 +84,7 @@ results = notion.databases.query(
                 {
                     "property": "Data",
                     "date": {
-                        "before": fim
+                        "on_or_before": fim
                     }
                 },
                 {
