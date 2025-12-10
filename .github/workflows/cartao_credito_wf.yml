@@ -1,4 +1,4 @@
-name: Cartão de Crédito Santander
+name: Cartão de Crédito
 
 on:
   schedule:
